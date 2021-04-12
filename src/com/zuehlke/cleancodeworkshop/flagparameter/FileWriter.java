@@ -7,9 +7,9 @@ package com.zuehlke.cleancodeworkshop.flagparameter;
  */
 public class FileWriter {
 
-	private String content = "";
-	private boolean isInAppendMode = false;
-	private boolean isContentFlushed = false;
+	private String content;
+	private boolean isInAppendMode;
+	private boolean isContentFlushed;
 
 	public FileWriter(final String newContent, final boolean useAppendMode) {
 
@@ -19,7 +19,6 @@ public class FileWriter {
 	}
 
 	public void write(final String contentToWrite, final boolean doFlushContent) {
-
 		isContentFlushed = false;
 
 		if (isInAppendMode) {
@@ -40,11 +39,7 @@ public class FileWriter {
 	public String getContent() {
 		return content;
 	}
-
-	public boolean isInAppendMode() {
-		return isInAppendMode;
-	}
-
+	
 	public boolean isContentFlushed() {
 		return isContentFlushed;
 	}
