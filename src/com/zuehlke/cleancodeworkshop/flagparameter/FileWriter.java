@@ -2,7 +2,7 @@ package com.zuehlke.cleancodeworkshop.flagparameter;
 
 /**
  * Demonstration of Flag Parameters
- * 
+ *
  * @author min
  */
 public class FileWriter {
@@ -18,8 +18,7 @@ public class FileWriter {
 		this.isContentFlushed = false;
 	}
 
-	public void write(final String contentToWrite, final boolean doFlushContent) {
-		isContentFlushed = false;
+	public void write(final String contentToWrite, final boolean isFlushContent) {
 
 		if (isInAppendMode) {
 			content += contentToWrite;
@@ -27,19 +26,19 @@ public class FileWriter {
 			content = contentToWrite;
 		}
 
-		if (doFlushContent) {
-			flushContent();
+		if (isFlushContent) {
+			setFlushContent();
 		}
 	}
 
-	public void flushContent() {
+	public void setFlushContent() {
 		isContentFlushed = true;
 	}
 
 	public String getContent() {
 		return content;
 	}
-	
+
 	public boolean isContentFlushed() {
 		return isContentFlushed;
 	}

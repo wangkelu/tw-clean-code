@@ -50,7 +50,7 @@ public class FileWriterTest {
 	public void testFlushContent() {
 		final FileWriter appendingFileWriter = new FileWriter("Initial Content", true);
 
-		appendingFileWriter.flushContent();
+		appendingFileWriter.setFlushContent();
 
         assertTrue(appendingFileWriter.isContentFlushed());
 	}
