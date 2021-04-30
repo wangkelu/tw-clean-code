@@ -1,5 +1,9 @@
 package com.zuehlke.cleancodeworkshop.inttoenum;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Optional;
+
 /**
  * Diese Klasse hält nur einen int als symbolischen System-Zustand.
  *
@@ -8,13 +12,17 @@ package com.zuehlke.cleancodeworkshop.inttoenum;
  */
 public class SystemState {
 
-	public static final int ALL_SERVICES_OK = 0;
-	public static final int COMMUNICATION_OK = 1;
-	public static final int COMMUNICATION_DISTURBED = 2;
-	public static final int MAIl_SERVICE_FAILURE = 3;
-	public static final int REPORT_SERVICE_FAILURE = 4;
-	public static final int DATABASE_CONNECTION_FAILURE = 5;
-	public static final int INTERNAL_PROCESING_FAILURE = 6;
+	public static final Map<Integer, String> errorCodeToDescriptionMap = new HashMap<Integer, String>() {
+		{
+			put(0, "All Services OK");
+			put(1, "Communication OK");
+			put(2, "Communication Disturbed");
+			put(3, "MailService Failure");
+			put(4, "ReportService Failure");
+			put(5, "Database Connection Failure");
+			put(6, "Internal Processing Failure");
+		}
+	};
 
 	private final int state;
 
@@ -35,27 +43,15 @@ public class SystemState {
 	// }
 
 	public static String getDescriptionForState(final int state) {
-		if (state == ALL_SERVICES_OK)
-			return "All Services OK";
+		Optional<String> description = errorCodeToDescriptionMap.entrySet().stream()
+				.filter(entry -> state == entry.getKey())
+				.map(Map.Entry::getValue)
+				.findFirst();
 
-		if (state == COMMUNICATION_OK)
-			return "Communication OK";
-
-		if (state == COMMUNICATION_DISTURBED)
-			return "Communication Disturbed";
-
-		if (state == MAIl_SERVICE_FAILURE)
-			return "MailService Failure";
-
-		if (state == REPORT_SERVICE_FAILURE)
-			return "ReportService Failure";
-
-		if (state == DATABASE_CONNECTION_FAILURE)
-			return "Database Connection Failure";
-
-		if (state == INTERNAL_PROCESING_FAILURE)
-			return "Internal Processing Failure";
-
-		return "Unknown state";
+		if(description.isPresent()) {
+			return description.get();
+		} else {
+			return "Unknown state";
+		}
 	}
 }
