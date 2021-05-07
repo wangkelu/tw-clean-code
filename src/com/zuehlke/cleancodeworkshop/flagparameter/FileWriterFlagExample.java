@@ -11,8 +11,8 @@ public class FileWriterFlagExample {
 		final File file = new File("C:\\temp\\example.txt");
 		
 		// hard to understand ???
-		final FileWriter fileWriter = new FileWriter(file, true);
-		final FileWriter fileWriter2 = new FileWriter(file, false);
+		final FileWriter writeFileWithAppend = new FileWriter(file, true);
+		final FileWriter writeFileWithNotAppend = new FileWriter(file, false);
 		
 		// define readable constants
 		final boolean APPEND_MODE = true;
