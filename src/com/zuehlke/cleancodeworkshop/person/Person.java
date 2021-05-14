@@ -37,14 +37,18 @@ public class Person {
 	}
 
 	private String nameString() {
-		String surname = familyName;
+		StringBuilder name = new StringBuilder();
 		if (capitalizeSurname) {
-			surname = familyName.toUpperCase();
+			name.append(familyName.toUpperCase());
+		} else {
+			name.append(familyName);
 		}
-		if (surnameFirst())
-			return surname + " " + givenName;
-		else
-			return givenName + " " + surname;
+		
+		if (surnameFirst()) {
+			return name.append(" ").append(givenName).toString();
+		} else {
+			return name.insert(0, givenName).insert(givenName.length(), " ").toString();
+		}
 	}
 
 	private boolean surnameFirst() {
