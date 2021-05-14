@@ -25,6 +25,6 @@ public class Square extends Rectangle {
     }
 
     public boolean contains(int x1, int y1, int x2, int y2) {
-        return contains(x1, y1) && contains(x2, y2);
+        return this.containsPoint(x1, y1) && this.containsPoint(x2, y2);
     }
 }

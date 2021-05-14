@@ -75,7 +75,7 @@ public class ShapeGroupTest {
     public void contains_pointNotInGroup() {
         ShapeGroup shapeGroup = new ShapeGroup();
 
-        assertFalse(shapeGroup.contains(0, 0));
+        assertFalse(shapeGroup.containsPoint(0, 0));
     }
 
     @Test
@@ -83,7 +83,7 @@ public class ShapeGroupTest {
         ShapeGroup shapeGroup = new ShapeGroup();
         shapeGroup.add(new Circle(0, 0, 0));
 
-        assertTrue(shapeGroup.contains(0, 0));
+        assertTrue(shapeGroup.containsPoint(0, 0));
     }
 
     @Test
@@ -91,7 +91,7 @@ public class ShapeGroupTest {
         ShapeGroup shapeGroup = new ShapeGroup();
         shapeGroup.add(new Circle(0, 0, 0));
 
-        assertFalse(shapeGroup.contains(1, 1));
+        assertFalse(shapeGroup.containsPoint(1, 1));
     }
 
     @Test

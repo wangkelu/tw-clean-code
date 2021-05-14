@@ -19,14 +19,14 @@ public class CircleTest {
 
     @Test
     public void contains() {
-        assertTrue(circle.contains(0, 0));
-        assertTrue(circle.contains(0, 1));
-        assertTrue(circle.contains(1, 0));
+        assertTrue(circle.containsPoint(0, 0));
+        assertTrue(circle.containsPoint(0, 1));
+        assertTrue(circle.containsPoint(1, 0));
 
-        assertFalse(circle.contains(1, 1));
-        assertFalse(circle.contains(-1, -1));
-        assertFalse(circle.contains(1, -1));
-        assertFalse(circle.contains(-1, 1));
+        assertFalse(circle.containsPoint(1, 1));
+        assertFalse(circle.containsPoint(-1, -1));
+        assertFalse(circle.containsPoint(1, -1));
+        assertFalse(circle.containsPoint(-1, 1));
 
     }
 

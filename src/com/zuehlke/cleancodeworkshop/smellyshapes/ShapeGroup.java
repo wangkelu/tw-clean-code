@@ -40,10 +40,10 @@ public class ShapeGroup extends ComplexShape {
         return false;
     }
 
-    public boolean contains(int x, int y) {
+    public boolean containsPoint(int x, int y) {
         for (Shape shape : shapes) {
             if (shape != null) {
-                if (shape.contains(x, y)) {
+                if (shape.containsPoint(x, y)) {
                     return true;
                 }
             }

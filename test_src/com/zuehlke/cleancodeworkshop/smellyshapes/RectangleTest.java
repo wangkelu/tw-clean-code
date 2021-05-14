@@ -18,14 +18,14 @@ public class RectangleTest {
 
     @Test
     public void contains() {
-        assertTrue(rectangle.contains(0, 0));
-        assertTrue(rectangle.contains(1, 0));
-        assertTrue(rectangle.contains(1, 1));
-        assertTrue(rectangle.contains(2, 1));
+        assertTrue(rectangle.containsPoint(0, 0));
+        assertTrue(rectangle.containsPoint(1, 0));
+        assertTrue(rectangle.containsPoint(1, 1));
+        assertTrue(rectangle.containsPoint(2, 1));
 
-        assertFalse(rectangle.contains(2, 2));
-        assertFalse(rectangle.contains(-1, 0));
-        assertFalse(rectangle.contains(0, -1));
+        assertFalse(rectangle.containsPoint(2, 2));
+        assertFalse(rectangle.containsPoint(-1, 0));
+        assertFalse(rectangle.containsPoint(0, -1));
     }
 
     @Test
