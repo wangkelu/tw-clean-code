@@ -24,14 +24,14 @@ public class ShapeGroup extends ComplexShape {
                 shapes = newShapes;
             }
 
-            if (contains(shape)) {
+            if (containsShape(shape)) {
                 return;
             }
             shapes[size++] = shape;
         }
     }
 
-    public boolean contains(Shape shape) {
+    public boolean containsShape(Shape shape) {
         for (int i = 0; i < size; i++) {
             if (shapes[i].equals(shape)) {
                 return true;

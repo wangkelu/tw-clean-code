@@ -98,7 +98,7 @@ public class ShapeGroupTest {
     public void contains_null() {
         ShapeGroup shapeGroup = new ShapeGroup();
 
-        assertFalse(shapeGroup.contains(null));
+        assertFalse(shapeGroup.containsShape(null));
     }
 
     @Test
@@ -107,6 +107,6 @@ public class ShapeGroupTest {
         Circle c = new Circle(0, 0, 0);
         shapeGroup.add(c);
 
-        assertTrue(shapeGroup.contains(c));
+        assertTrue(shapeGroup.containsShape(c));
     }
 }
